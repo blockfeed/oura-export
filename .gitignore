@@ -14,3 +14,4 @@ oura_export/
 
 # OS
 .DS_Store
+*.tgz
