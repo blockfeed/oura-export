@@ -1,10 +1,13 @@
+
 # Oura Export Utility
 
-Simple, clean exporter for sleep and heart‑rate data from the Oura Cloud API.
+Simple exporter for sleep and heart‑rate data from the Oura Cloud API.
 
-This project uses the official community Python client:
+This project uses the third‑party Python client maintained at:
 
 https://github.com/hedgertronic/oura-ring
+
+Note: This is not an official Oura SDK. It is a community-maintained wrapper around the Oura Cloud v2 REST API.
 
 ---
 
@@ -37,7 +40,7 @@ Set it as an environment variable:
 export OURA_TOKEN="your_token_here"
 ```
 
-The token is read from the environment and is **never written to disk**.
+The token is read from the environment and is never written to disk.
 
 ---
 
