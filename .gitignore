@@ -1,0 +1,16 @@
+# Virtualenv
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local exports
+oura_export/
+*.gz
+
+# Secrets
+.env
+
+# OS
+.DS_Store
