@@ -1,34 +1,65 @@
 
-# Oura Export Utility
+# Oura Ring Data Exporter
 
-Simple exporter for sleep and heart‑rate data from the Oura Cloud API.
+A small, focused utility for exporting personal data from the **Oura Ring**
+via the **Oura Cloud API** so you can analyze it yourself.
 
-This project uses the third‑party Python client maintained at:
+This project uses the community-maintained Python client:
 
 https://github.com/hedgertronic/oura-ring
 
-Note: This is not an official Oura SDK. It is a community-maintained wrapper around the Oura Cloud v2 REST API.
+Note: This is not an official Oura SDK. It is a third‑party wrapper around the
+Oura Cloud v2 REST API.
 
 ---
 
-## What This Does
+## Purpose
 
-- Exports sleep data
-- Exports sleep period details (HR, HRV, stages, efficiency, etc.)
-- Exports heart rate data
-- Produces clean JSON + JSONL summary files for analysis
-- Defaults to exporting the last **7 days**
-- Adjustable via `--days`
+This tool exists for one reason:
+
+To export your own Oura Ring data from the Oura Cloud API into structured
+JSON files so you can:
+
+- Perform your own analysis
+- Build custom dashboards
+- Run statistical modeling
+- Correlate sleep, HR, HRV, stress, or readiness with other datasets
+- Maintain your own historical archive
+
+It does not perform analytics. It exports raw and lightly summarized data so
+you remain in control of interpretation.
+
+---
+
+## What Gets Exported
+
+From the Oura Cloud API (v2):
+
+- Daily sleep summaries
+- Sleep period details (HR, HRV, stages, latency, efficiency)
+- Heart rate (5‑minute resolution)
+- Daily heart-rate aggregates
+- Readiness (optional)
+- Activity (optional)
+- Stress (optional)
+- SpO₂ (optional)
+- Sessions / tags (optional)
+
+Default export window: **last 7 days**  
+Adjust with `--days`.
 
 ---
 
 ## Requirements
 
 - Python 3.9+
-- An Oura Personal Access Token
+- Oura Ring account
+- Oura Cloud Personal Access Token
 - Internet access
 
-### Personal Access Token
+---
+
+## Personal Access Token
 
 Generate your token here:
 
@@ -109,7 +140,8 @@ oura_export/
   rest_mode_period.json
 ```
 
-The `*_summary.jsonl` files contain flattened daily records intended for analysis.
+The `*_summary.jsonl` files provide flattened daily records designed to make
+downstream analysis simple.
 
 ---
 
@@ -117,4 +149,4 @@ The `*_summary.jsonl` files contain flattened daily records intended for analysi
 
 This project is licensed under the GNU General Public License v3.0.
 
-See the `LICENSE` file for details.
+See the `LICENSE` file for full details.
